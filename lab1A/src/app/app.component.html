@@ -1,0 +1,12 @@
+
+<div class="card">
+<a  href="./Servlet1">Servlet1</a>
+<button  (click)="getEntities()">Get GPUs</button>
+<ul>
+    <li *ngFor="let ent of entityList">
+        Title:{{ent.title}}, price:{{ent.price}}, width: {{ent.width}}
+        
+    </li>
+</ul>
+
+</div>
