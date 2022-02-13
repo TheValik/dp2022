@@ -1,6 +1,11 @@
 package GPU;
-
-public class GPU {
+import java.io.Serializable;;
+public class GPU implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	String title;
 	int price;
 	float width;
