@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import GPU.GPU;
 import crud.Lab2CrudInterface;
 
 /**
@@ -40,9 +41,12 @@ public class GPUServlet1 extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String title = request.getParameter("title");
+		int price = Integer.parseInt(request.getParameter("price"));
+		float width = Float.parseFloat(request.getParameter("width"));
+		lab2Crud.updateGPU(new GPU(title,price,width));
+		
 		
 	}
 
