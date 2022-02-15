@@ -14,6 +14,7 @@ import crud.Lab2CrudInterface;
 /**
  * Servlet implementation class GPUServlet1
  */
+@WebServlet("/Servlet1")
 public class GPUServlet1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	ServletConfigInterface servletConfig; 

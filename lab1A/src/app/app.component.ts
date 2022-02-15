@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GPU } from './interfaces/gpu';
+import { IGPU } from './interfaces/gpu';
 import { Service1Service } from './services/service1.service';
 
 @Component({
@@ -9,15 +9,33 @@ import { Service1Service } from './services/service1.service';
 })
 export class AppComponent {
   title = 'lab1A';
-  entityList:GPU[]=[];
+  entityList:IGPU[]=[];
 
   constructor(private service:Service1Service){}
 
-  getEntities():void{
+  
+  ngOnInit():void{
+    this.updateGPUs();
+  }
+
+updateGPUs(){
+  //getEnt
     this.service.getEntities().subscribe(
       (gpu)=>{
         this.entityList=gpu;
       }
       )
   }
+
+  addEntities(gpu:IGPU):void{
+    //postEntities
+    this.service.putEntities(gpu).subscribe(
+      (gpu)=>{
+        console.log(gpu);
+        this.updateGPUs();
+      }
+      )
+  }
+  
+
 }
