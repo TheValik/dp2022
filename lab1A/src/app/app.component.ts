@@ -18,7 +18,7 @@ export class AppComponent {
     this.updateGPUs();
   }
 
-updateGPUs(){
+updateGPUs():void{
   //getEnt
     this.service.getEntities().subscribe(
       (gpu)=>{
