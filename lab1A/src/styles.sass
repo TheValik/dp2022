@@ -1,36 +1,113 @@
-*
-    font-size: 20px
-    font-family: Roboto
+$color1: #c5978f
+$color2: #7c99ae
+$color3: #6a849a
+$color4: #181e1f
     
-.card
+*
+    font-family: Roboto
+    margin: 0px
+    padding: 0px
+header
+    background-color: $color3
+
+.imgVst
+    min-height: 1000px
+    background-image: url("assets/img/1.jfif")
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+
+.tema
+    padding-top: 100px
+    text-align: center
+    font-size: 100pt
+    color: $color2
+
+
+footer
+    background-color: $color2
+    color: $color4
+    text-align: center
+    padding: 10px
+
+.zagolovoknovyn
+    padding-top: 50px
+    text-align: center
+    font-size: 80pt
+.novyny
     display: flex
-    flex-direction: column
+    padding: 5px
     justify-content: space-between
     align-items: center
-    background-color:  #818181
-    // внутрішній відступ
+    flex-wrap: wrap
+
+    .elemNovyny
+        width: 25%
+        min-width: 150px
+        margin: 20px
+        text-align: justify
+        display: flex
+        flex-direction: column
+        h2
+            padding: 10px
+            text-align: center
+    .add
+        height: 100px
+        width: 100px
+        cursor: pointer
+        margin-left: auto
+        margin-right: auto
+            
+.sylka
     padding: 10px
-    border-radius: 30px
-    margin: 10px
-    max-width: 250px
-    border: dotted 4px #e01a1a
-    color: black
+    font-size: 30pt
+    padding-right: 40px
     &:hover
-        background-color: #1f998f
-        border: solid 4px #e01a1a
+        background-color: $color2
     a
         text-decoration: none
         color: black
-        &:hover
-            color: white
-                
-    button
-        &:hover
-            background-color: #d0d31f
-            border: solid 4px #94e01a
+.MenuClick
+    display: none
+    img
+        height: 100px
+        width: 100px
         cursor: pointer
-        margin-top: 10px
-        padding: 10px
+        margin-left: auto
+        margin-right: auto
 
+
+.imgNews
+    max-height: 500px
+    align-items: center
+
+.NONE 
+    display: none
+
+.button
+    cursor: pointer
+    &:hover
+        background-color: $color3
+
+//переведення колонку при розміру екрана менше 650 Px
+@media screen and (max-width: 650px)
+    .novyny
+        flex-direction: column
+        .elemNovyny
+            width: 60%
+            padding-bottom: 40px
+    .tema
+        font-size: 50pt
+    .MenuClick
+        display: block
+    .menu
+        flex-direction: column
     
-    
+@media screen and (min-width: 651px)
+    #NONE 
+        display: block
+        
+    .menu
+        display: flex
+        justify-content: left
+        flex-wrap: wrap
