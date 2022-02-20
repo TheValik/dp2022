@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { TytulkaComponent } from './tytulka/tytulka.component';
-import { NewsComponent } from './news/news.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -19,7 +18,6 @@ import { UpdateComponent } from './update/update.component';
     MenuComponent,
     FooterComponent,
     TytulkaComponent,
-    NewsComponent,
     ListComponent,
     UpdateComponent
   ],

@@ -2,7 +2,7 @@
 <div class="zagolovoknovyn" id="GPU`s">GPU`s</div>
 
 <div class="novyny" >
-    <div class="elemNovyny" *ngFor="let u of usersList" (click)="onSelect(u)"> <img class="imgNews" src="assets/img/4n.png" alt="nerabotaet"> <h2>{{u.name}}</h2> <div>{{u.age}}</div>{{u.id}} </div>
+    <div class="elemNovyny" *ngFor="let u of usersList" (click)="onSelect(u)"> <img class="imgNews" src="assets/img/4n.png" alt="nerabotaet"> <h2>{{u.name}}</h2> <div>{{u.age}}</div> <div><span (click)="deleteUser(u)"> X </span></div> </div>
 </div>
 
 <div class="form" id="form">
