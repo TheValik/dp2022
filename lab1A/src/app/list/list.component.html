@@ -1,18 +1,16 @@
-<h2>{{title}}</h2>
-<ul>
-    <li *ngFor="let u of usersList" 
-    (click)="onSelect(u)"
-    >{{u.id}}. {{u.name}} age: {{u.age}}
-    <span (click)="deleteUser(u)"> X </span>
-    </li>
-</ul>
 
-<h3 (click)="showAddForm=!showAddForm">Add User</h3>
-<form *ngIf="showAddForm" #form1="ngForm" (ngSubmit)="addUser(form1.value)" >
+<div class="zagolovoknovyn" id="GPU`s">GPU`s</div>
+
+<div class="novyny" >
+    <div class="elemNovyny" *ngFor="let u of usersList" (click)="onSelect(u)"> <img class="imgNews" src="assets/img/4n.png" alt="nerabotaet"> <h2>{{u.name}}</h2> <div>{{u.age}}</div>{{u.id}} </div>
+</div>
+
+<div class="form" id="form">
+<form #form1="ngForm" (ngSubmit)="addUser(form1.value) " class="decor">
     <input type="hidden" name="id"  ngModel="-1">
-    <input type="text" name="name"  ngModel="Add GPU"><br><br>
-    <input type="number" name="age" ngModel=23><br><br>
-    <input type="submit" value="Add User">
+    <input type="text" name="name" placeholder="Model name"  ngModel="Add GPU"><br><br>
+    <input type="number" name="age" placeholder="Price" ngModel=23><br><br>
+    <input type="submit" value="Add User" class="button">
 </form>
-
+</div>
 <app-update [user]="selectedUser" (updated)="updateUsers()"></app-update>

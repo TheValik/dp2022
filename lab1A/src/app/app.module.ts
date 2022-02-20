@@ -7,7 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { TytulkaComponent } from './tytulka/tytulka.component';
 import { NewsComponent } from './news/news.component';
-import { FormaVzaemidiiComponent } from './forma-vzaemidii/forma-vzaemidii.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ListComponent } from './list/list.component';
@@ -20,7 +20,6 @@ import { UpdateComponent } from './update/update.component';
     FooterComponent,
     TytulkaComponent,
     NewsComponent,
-    FormaVzaemidiiComponent,
     ListComponent,
     UpdateComponent
   ],

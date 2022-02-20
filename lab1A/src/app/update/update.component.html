@@ -1,8 +1,11 @@
-<div *ngIf="user">
+<div *ngIf="user" class="form" id="form">
 <h3>Update User</h3>
 
+<div class="decor">
 <input type="hidden" [(ngModel)]="user.id">
 <input type="text" [(ngModel)]="user.name"><br><br>
 <input type="number" [(ngModel)]="user.age"><br><br>
-<button (click)="updateUser()">Update user</button>
+<input class="button" (click)="updateUser()" type="submit" value="Update user">
+</div>
+
 </div>

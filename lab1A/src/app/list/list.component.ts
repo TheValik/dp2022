@@ -9,7 +9,7 @@ import { UserService } from '../services/user.service';
 })
 export class ListComponent implements OnInit {
 
-  title:string="List of Users";
+  title:string="List of GPU`s";
   usersList:IGPU[]=[];
   showAddForm:boolean=false;
   selectedUser?:IGPU;
