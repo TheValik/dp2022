@@ -8,9 +8,9 @@
 </ul>
 
 <h3 (click)="showAddForm=!showAddForm">Add User</h3>
-<form *ngIf="showAddForm" #form1="ngForm" (ngSubmit)="addUser(form1.value)">
+<form *ngIf="showAddForm" #form1="ngForm" (ngSubmit)="addUser(form1.value)" >
     <input type="hidden" name="id"  ngModel="-1">
-    <input type="text" name="name"  ngModel><br><br>
+    <input type="text" name="name"  ngModel="Add GPU"><br><br>
     <input type="number" name="age" ngModel=23><br><br>
     <input type="submit" value="Add User">
 </form>
