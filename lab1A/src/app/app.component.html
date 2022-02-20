@@ -1,22 +1,2 @@
 
-<div class="card">
-<a  href="./Servlet1">Servlet1</a>
-<button  (click)="updateGPUs()">Get GPUs</button>
-<ul>
-    <li *ngFor="let ent of entityList">
-        Title:{{ent.title}}, price:{{ent.price}}, width: {{ent.width}}
-        
-    </li>
-</ul>
-
-<div>Add GPU</div>
-<form #form1="ngForm" (ngSubmit)="addEntities(form1.value)">
-
-    <input type="text" name="name" value="" ngModel>
-    <br><br>
-    <input type="text" name="price" value="15" ngModel>
-    <br><br>
-    <input type="text" name="width" value="15" ngModel>
-    <input type="submit" value="Add GPU">
-
-</form>
+<app-list></app-list>

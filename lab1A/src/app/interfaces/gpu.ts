@@ -1,5 +1,8 @@
 export interface IGPU {
-    title:string;
-    price:number;
-    width:number;
+    // title:string;
+    // price:number;
+    // width:number;
+    id: number;
+	name: String;
+	age :number;
 }
