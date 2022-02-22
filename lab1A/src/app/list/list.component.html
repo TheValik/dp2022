@@ -2,7 +2,7 @@
 <div class="zagolovoknovyn" id="GPU`s">GPU`s</div>
 
 <div class="novyny" >
-    <div class="elemNovyny" *ngFor="let u of usersList" (click)="onSelect(u)"> <img class="imgNews" src="assets/img/4n.png" alt="nerabotaet"> <h2>{{u.name}}</h2> <div class="TextCentr">{{u.price}} $</div> <div class="TextCentr">{{u.width}} mm</div><div class="TextCentr colorT"><span  (click)="deleteUser(u)"> X </span></div> </div>
+    <div class="elemNovyny" *ngFor="let u of usersList" > <img class="imgNews" src="assets/img/4n.png" alt="nerabotaet"> <h2>{{u.name}}</h2> <div class="TextCentr">{{u.price}} $</div> <div class="TextCentr">{{u.width}} mm</div><div class="TextCentr"><a href="#Update"><img class="imgRef" (click)="onSelect(u)" src="assets/img/refresh.png" alt="nema"></a></div><div class="TextCentr colorT"><span  (click)="deleteUser(u)"> X </span></div> </div>
 </div>
 
 <div class="zagolovoknovyn" id="ADD">Add GPU</div>

@@ -1,11 +1,12 @@
 <div *ngIf="user" class="form" id="form">
-<div class="zagolovoknovyn">Update GPU</div>
+<div class="zagolovoknovyn" id="Update">Update GPU</div>
 
 <div class="decor">
 <input type="hidden" [(ngModel)]="user.id">
 <input type="text" [(ngModel)]="user.name"><br><br>
 <input type="number" [(ngModel)]="user.price"><br><br>
 <input type="width" [(ngModel)]="user.width"><br><br>
+
 <input class="button" (click)="updateUser()" type="submit" value="Update user">
 </div>
 
