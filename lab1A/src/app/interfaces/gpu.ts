@@ -4,5 +4,5 @@ export interface IGPU {
     // width:number;
     id: number;
 	name: String;
-	age :number;
+	price :number;
 }

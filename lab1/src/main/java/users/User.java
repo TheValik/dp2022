@@ -12,7 +12,7 @@ public class User implements Serializable {
 	
 	int id;
 	String name;
-	int age;
+	int price;
 	
 	
 	public User() {
@@ -20,10 +20,10 @@ public class User implements Serializable {
 	}
 	
 	
-	public User(int id, String name, int age) {
+	public User(int id, String name, int price) {
 		this.id = id;
 		this.name = name;
-		this.age = age;
+		this.price = price;
 	}
 
 
@@ -39,17 +39,17 @@ public class User implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getAge() {
-		return age;
+	public int getPrice() {
+		return price;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
 
 	@Override
 	public String toString() {
-		return "{\"id\":"+id+",\"name\":\""+name+"\", \"age\":"+age+"}";
+		return "{\"id\":"+id+",\"name\":\""+name+"\", \"price\":"+price+"}";
 	}
 	
 	
