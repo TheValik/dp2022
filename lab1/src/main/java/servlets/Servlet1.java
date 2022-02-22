@@ -43,7 +43,7 @@ public class Servlet1 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		lab2Crud.updateGPU(lu);
-		lu = lab2Crud.readUser();
+		lu = lab2Crud.readGPU();
 		setAccessControlHeaders(response);
 		response.setContentType("application/json");
 		response.getWriter().println(lu);

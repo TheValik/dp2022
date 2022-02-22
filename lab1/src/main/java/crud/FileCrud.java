@@ -15,7 +15,7 @@ public class FileCrud implements Lab2CrudInterface {
 	}
 	
 	@Override
-	public List<User> readUser() {
+	public List<User> readGPU() {
 		
 		return (List<User>)fio.loadFromFile();
 	}
