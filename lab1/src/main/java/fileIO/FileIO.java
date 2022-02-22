@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class FileIO implements fileIOInterface {
+public class FileIO implements FileIOInterface {
 	private String fileName="file.txt";
 
 	public String getFileName() {

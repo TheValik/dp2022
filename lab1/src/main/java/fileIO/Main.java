@@ -1,15 +1,15 @@
+
 package fileIO;
 
-import GPU.GPU;
+import users.User;
 
 public class Main {
 
-	public static void main(String[] args) {
-		GPU gpu =new GPU("Mock1",23,3.2f);
-		fileIOInterface fio = new FileIO();
-		fio.saveToFile(gpu);
-		System.out.println((GPU)fio.loadFromFile());
+  public static void main(String[] args) {
+	User user =new User(0,"Roman",40);
+    FileIOInterface fio = new FileIO();
+    fio.saveToFile(user);
+    System.out.println((User)fio.loadFromFile());
 
-	}
-
+  }
 }

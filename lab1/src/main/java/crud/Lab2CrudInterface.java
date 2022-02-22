@@ -1,10 +1,11 @@
 package crud;
 
-import GPU.GPU;
+import java.util.List;
+
+import users.User;
 
 public interface Lab2CrudInterface {
-	public GPU readGPU();
-	public void updateGPU(GPU GPU);
-	
-	
+
+	public List<User> readUser();
+	public void updateGPU(List<User> User);
 }

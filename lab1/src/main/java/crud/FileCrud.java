@@ -1,26 +1,28 @@
 package crud;
 
-import GPU.GPU;
+import java.util.List;
+
 import fileIO.FileIO;
-import fileIO.fileIOInterface;
+import fileIO.FileIOInterface;
+import users.User;
 
 public class FileCrud implements Lab2CrudInterface {
 
-	fileIOInterface fio;
+	FileIOInterface fio;
 	
 	public FileCrud() {
 		this.fio = new FileIO();
 	}
 	
 	@Override
-	public GPU readGPU() {
+	public List<User> readUser() {
 		
-		return (GPU)fio.loadFromFile();
+		return (List<User>)fio.loadFromFile();
 	}
 
 	@Override
-	public void updateGPU(GPU GPU) {
-		fio.saveToFile(GPU);
+	public void updateGPU(List<User> User) {
+		fio.saveToFile(User);
 
 	}
 

@@ -2,7 +2,6 @@ package servlets;
 
 import crud.FileCrud;
 import crud.Lab2CrudInterface;
-import mock.Lab2CrudMock;
 
 public class ServletConfig implements ServletConfigInterface {
 
@@ -16,9 +15,7 @@ public class ServletConfig implements ServletConfigInterface {
 	public void setL2ci(Lab2CrudInterface l2ci) {
 		this.l2ci = l2ci;
 	}
-
-
-
+	
 	@Override
 	public Lab2CrudInterface getCrud() {
 		// TODO Auto-generated method stub
