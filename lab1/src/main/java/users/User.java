@@ -13,6 +13,7 @@ public class User implements Serializable {
 	int id;
 	String name;
 	int price;
+	float width;
 	
 	
 	public User() {
@@ -20,10 +21,11 @@ public class User implements Serializable {
 	}
 	
 	
-	public User(int id, String name, int price) {
+	public User(int id, String name, int price,float width ) {
 		this.id = id;
 		this.name = name;
 		this.price = price;
+		this.width = width;
 	}
 
 
@@ -45,11 +47,18 @@ public class User implements Serializable {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	
+	public float getWidth() {
+		return width;
+	}
+	public void setWidth(int width) {
+		this.width = width;
+	}
 
 
 	@Override
 	public String toString() {
-		return "{\"id\":"+id+",\"name\":\""+name+"\", \"price\":"+price+"}";
+		return "{\"id\":"+id+",\"name\":\""+name+"\", \"price\":"+price+",\"width\":"+width+"}";
 	}
 	
 	

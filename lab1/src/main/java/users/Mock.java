@@ -9,9 +9,9 @@ public class Mock {
 	
 	
 	public Mock () {		
-		this.userList.add(new User(0,"GTX 1060",250));
-		this.userList.add(new User(1,"RTX 2060",325));
-		this.userList.add(new User(2,"RTX 3060",400));
+		this.userList.add(new User(0,"GTX 1060",250, 180.8f));
+		this.userList.add(new User(1,"RTX 2060",325, 350.5f));
+		this.userList.add(new User(2,"RTX 3060",400, 250.5f));
 	}
 
 	public List<User> getUserList() {
