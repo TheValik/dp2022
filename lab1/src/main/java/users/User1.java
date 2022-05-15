@@ -2,7 +2,7 @@ package users;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
+public class User1 implements Serializable {
 	
 	/**
 	 * 
@@ -16,12 +16,12 @@ public class User implements Serializable {
 	float width;
 	
 	
-	public User() {
+	public User1() {
 		
 	}
 	
 	
-	public User(int id, String name, int price,float width ) {
+	public User1(int id, String name, int price,float width ) {
 		this.id = id;
 		this.name = name;
 		this.price = price;

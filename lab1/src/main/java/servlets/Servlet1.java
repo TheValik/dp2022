@@ -1,18 +1,18 @@
 package servlets;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
+import jakarta.servlet.Servlet;
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import users.Mock;
-import users.User;
-
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
-
-import crud.Lab2CrudInterface;
+import jdbc.Connect;
+import jdbc.SqlCRUD;
+import users.User1;
 
 /**
  * Servlet implementation class Servlet1
@@ -21,36 +21,44 @@ import crud.Lab2CrudInterface;
 public class Servlet1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	ServletConfigInterface servletConfig;
-	Lab2CrudInterface lab2Crud;
-	List<User> lu = new Mock().getUserList();
+	LabCRUDInterface<User1> crud = new SqlCRUD();
+	
+		
+
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub	
+		
+		crud = new SqlCRUD();
+		
+	}
+
+	/**
+	 * @see Servlet#destroy()
+	 */
+	public void destroy() {
+		// TODO Auto-generated method stub
+		try {
+			((SqlCRUD) crud).getConnection().close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
        
     /**
      * @see HttpServlet#HttpServlet()
      */
    
-	//--------------------
-	public Servlet1() {
-		/////////////////////////
-		super();
-		
-		this.servletConfig=new ServletConfig();
-        this.lab2Crud=servletConfig.getCrud();
-	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		lab2Crud.updateGPU(lu);
-		lu = lab2Crud.readGPU();
+		
 		setAccessControlHeaders(response);
 		response.setContentType("application/json");
-		response.getWriter().println(lu);
-		
-		//------------------------
-		//PrintWriter out = response.getWriter();
-		//out.println("["+lab2Crud.readUser()+"]");
+//		System.out.println(((SqlCRUD) crud).getConnection());
+		response.getWriter().println(crud.read());
 	}
 
 	/**
@@ -58,9 +66,8 @@ public class Servlet1 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		setAccessControlHeaders(response);
-		User user = Helpers.userParse(request);
-		user.setId(Helpers.getNextId(lu));
-		lu.add(user);
+		User1 user = Helpers.userParse(request);
+		crud.create(user);
 		doGet(request, response);
 	}
 
@@ -70,12 +77,10 @@ public class Servlet1 extends HttpServlet {
 	
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		setAccessControlHeaders(response);
-		User user = Helpers.userParse(request);
+		User1 user = Helpers.userParse(request);
 		int id = Integer.parseInt(request.getPathInfo().substring(1));
-		System.out.println(id);
 		response.setContentType("application/json");
-		int index = Helpers.getIndexByUserId(id, lu);
-		lu.set(index,user);
+		crud.update(id, user);
 		doGet(request, response);
 	}
 
@@ -86,10 +91,9 @@ public class Servlet1 extends HttpServlet {
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		setAccessControlHeaders(response);
 		int id = Integer.parseInt(request.getPathInfo().substring(1));
-		System.out.println(id);
+		
 		response.setContentType("application/json");
-		int index = Helpers.getIndexByUserId(id, lu);
-		lu.remove(index);
+		crud.delete(id);
 		doGet(request, response);
 	}
 
