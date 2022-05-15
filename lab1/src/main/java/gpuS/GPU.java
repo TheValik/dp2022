@@ -1,8 +1,8 @@
-package users;
+package gpuS;
 
 import java.io.Serializable;
 
-public class User1 implements Serializable {
+public class GPU implements Serializable {
 	
 	/**
 	 * 
@@ -16,12 +16,12 @@ public class User1 implements Serializable {
 	float width;
 	
 	
-	public User1() {
+	public GPU() {
 		
 	}
 	
 	
-	public User1(int id, String name, int price,float width ) {
+	public GPU(int id, String name, int price,float width ) {
 		this.id = id;
 		this.name = name;
 		this.price = price;

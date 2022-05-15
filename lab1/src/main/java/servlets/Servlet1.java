@@ -3,6 +3,7 @@ package servlets;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import gpuS.GPU;
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
@@ -12,7 +13,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jdbc.Connect;
 import jdbc.SqlCRUD;
-import users.User1;
 
 /**
  * Servlet implementation class Servlet1
@@ -21,7 +21,7 @@ import users.User1;
 public class Servlet1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	LabCRUDInterface<User1> crud = new SqlCRUD();
+	LabCRUDInterface<GPU> crud = new SqlCRUD();
 	
 		
 
@@ -66,7 +66,7 @@ public class Servlet1 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		setAccessControlHeaders(response);
-		User1 user = Helpers.userParse(request);
+		GPU user = Helpers.userParse(request);
 		crud.create(user);
 		doGet(request, response);
 	}
@@ -77,7 +77,7 @@ public class Servlet1 extends HttpServlet {
 	
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		setAccessControlHeaders(response);
-		User1 user = Helpers.userParse(request);
+		GPU user = Helpers.userParse(request);
 		int id = Integer.parseInt(request.getPathInfo().substring(1));
 		response.setContentType("application/json");
 		crud.update(id, user);

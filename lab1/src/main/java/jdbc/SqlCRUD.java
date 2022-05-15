@@ -8,10 +8,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import gpuS.GPU;
 import servlets.LabCRUDInterface;
-import users.User1;
 
-public class SqlCRUD implements LabCRUDInterface<User1> {
+public class SqlCRUD implements LabCRUDInterface<GPU> {
 	
 	Connection connection;
 	
@@ -31,9 +31,9 @@ public class SqlCRUD implements LabCRUDInterface<User1> {
 	}
 
 	@Override
-	public void create(User1 t) {
+	public void create(GPU t) {
 		// TODO Auto-generated method stub
-		try (PreparedStatement st = connection.prepareStatement("INSERT INTO GpU (name,price,width) " + "VALUES (?,?,?)")) {
+		try (PreparedStatement st = connection.prepareStatement("INSERT INTO gpu (name,price,width) " + "VALUES (?,?,?)")) {
 			st.setString(1, t.getName());
 			st.setInt(2, t.getPrice());
 			st.setFloat(3, t.getWidth());
@@ -48,13 +48,13 @@ public class SqlCRUD implements LabCRUDInterface<User1> {
 	}
 
 	@Override
-	public List<User1> read() {
+	public List<GPU> read() {
 		// TODO Auto-generated method stub
-		List<User1> list = new ArrayList<>();
+		List<GPU> list = new ArrayList<>();
 
-		try (Statement st = connection.createStatement(); ResultSet rs = st.executeQuery("SELECT * FROM GpU;");) {
+		try (Statement st = connection.createStatement(); ResultSet rs = st.executeQuery("SELECT * FROM gpu;");) {
 			while (rs.next()) {
-				list.add(new User1(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getFloat(4)));
+				list.add(new GPU(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getFloat(4)));
 			}
 
 		} catch (SQLException e) {
@@ -66,10 +66,10 @@ public class SqlCRUD implements LabCRUDInterface<User1> {
 	}
 
 	@Override
-	public void update(int id, User1 t) {
+	public void update(int id, GPU t) {
 		// TODO Auto-generated method stub
 		try (PreparedStatement st = connection
-				.prepareStatement("UPDATE GpU " + "SET \"name\"=?, \"price\"=?, \"width\"=? WHERE id=?;")) {
+				.prepareStatement("UPDATE gpu " + "SET \"name\"=?, \"price\"=?, \"width\"=? WHERE id=?;")) {
 			st.setString(1, t.getName());
 			st.setInt(2, t.getPrice());
 			st.setFloat(3, t.getWidth());
@@ -87,7 +87,7 @@ public class SqlCRUD implements LabCRUDInterface<User1> {
 		// TODO Auto-generated method stub
 		
 		try (PreparedStatement st = connection
-				.prepareStatement("DELETE FROM GpU WHERE id=?;")) {
+				.prepareStatement("DELETE FROM gpu WHERE id=?;")) {
 			st.setInt(1, id);
 			st.executeUpdate();
 		} catch (SQLException e) {
