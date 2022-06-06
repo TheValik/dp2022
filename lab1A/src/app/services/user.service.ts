@@ -30,7 +30,7 @@ export class UserService {
    }
 
    deleteUser(user:IGPU):Observable<IGPU[]>{
-     return this.http.delete<IGPU[]>(this.url+"/"+user._links);
+     return this.http.delete<IGPU[]>(user._links.self.href);
    }
 
    setList(list:IGPU[]){
