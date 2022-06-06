@@ -26,7 +26,7 @@ export class UserService {
    }
 
    putUser(user:IGPU):Observable<IGPU[]>{
-     return this.http.put<IGPU[]>(this.url+"/"+user._links,user);
+     return this.http.put<IGPU[]>(user._links.self.href,user);
    }
 
    deleteUser(user:IGPU):Observable<IGPU[]>{
